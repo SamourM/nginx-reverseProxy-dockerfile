@@ -70,46 +70,50 @@ server {
 	#}
 
 
-location /forbes-insights/wp-admin/{
+location /forbes-insights/{
 
-                proxy_pass http://35.229.62.42/forbes-insights/wp-admin/;
+                proxy_pass http://35.229.62.42/forbes-insights/wp-login.php;
                 proxy_set_header X-Real-IP         $remote_addr;
-                                            
+                #proxy_set_header Host $http_host;                           
         }
 
 
-location /cmo-practice/wp-admin/ {
+location /cmo-practice/ {
 
-                proxy_pass http://104.196.207.124/cmo-practice/wp-admin/;
+                proxy_pass http://104.196.207.124/cmo-practice/wp-login.php;
                 proxy_set_header X-Real-IP         $remote_addr;
+                #proxy_set_header Host $http_host;
 
 }
 
-location /custom/wp-admin/
+location /custom/
 
 {
 
-               proxy_pass http://35.243.138.146/custom/wp-admin/;
+               proxy_pass http://35.243.138.146/custom/wp-login.php;
                proxy_set_header X-Real-IP         $remote_addr;
-  
+               #proxy_set_header Host $http_host;
+
 	
 }
 
 
-location /forbes-live/wp-admin/
+location /forbes-live/
 
 {
 
-              proxy_pass http://35.237.124.208/forbes-live/wp-admin/;
+              proxy_pass http://35.237.124.208/forbes-live/wp-login.php;
               proxy_set_header X-Real-IP         $remote_addr;
+              #proxy_set_header Host $http_host;
 
 }
 
-location /forbes-media/wp-admin/
+location /forbes-media/
 
 {
-             proxy_pass http://35.231.89.26/forbes-media/wp-admin/;
+             proxy_pass http://35.231.89.26/forbes-media/wp-login.php;
              proxy_set_header X-Real-IP         $remote_addr;
+             #proxy_set_header Host $http_host;
 
 }
 
